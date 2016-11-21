@@ -103,6 +103,10 @@ class Terminal(object):
         self.notify('TTY', 'connecting to TTY:{0} ...'.format(self.tty_name))
         self._tty_open()
 
+        sleep(2)
+        self.write("\r\n")
+        sleep(2)
+
         self.notify('TTY', 'logging in ...')
 
         self.state = self._ST_INIT
